@@ -30,7 +30,12 @@ int main() {
         << "How much will you pay? $";
     cin >> payment;
     change = payment - totalTax;
-    cout << "Your change is $" << change << "\nThanks for coming!";
+    cout << "\nReceipt for customer: " << first_name << "\n"
+        << "Coffees: " << coffees << "\n"
+        << "Bagels: " << bagels << "\n"
+        << "Donuts: " << donuts << "\n"
+        << "Your total is: $" << totalTax << "\n" 
+        << "Your change is $" << change << "\nThanks for coming!";
     
     
     return 0;
