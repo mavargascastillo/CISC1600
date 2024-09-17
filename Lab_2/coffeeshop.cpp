@@ -14,10 +14,10 @@ int main() {
     double totalNoTax, totalTax;
     double payment, change;
 
-    cout << "Welcome to Vargas' Coffee Shop!\n"
-        << "What is your name? ";
+    cout << "Welcome to our Coffee Shop!\n"
+        << "What is your first name? ";
     cin >> first_name;
-    cout << "Nice to meet you, " << first_name << "!\n";
+    cout << "Hello, " << first_name << "!\n";
     cout << "How many coffees do you want? ";
     cin >> coffees;
     cout << "How many bagels do you want? ";
@@ -30,12 +30,12 @@ int main() {
         << "How much will you pay? $";
     cin >> payment;
     change = payment - totalTax;
-    cout << "\nReceipt for customer: " << first_name << "\n"
+    cout << "Receipt for customer: " << first_name << "\n"
         << "Coffees: " << coffees << "\n"
         << "Bagels: " << bagels << "\n"
         << "Donuts: " << donuts << "\n"
-        << "Your total is: $" << totalTax << "\n" 
-        << "Your change is $" << change << "\nThanks for coming!";
+        << "Total is: $" << totalTax << "\n" 
+        << "Your change is: $" << change;
     
     
     return 0;
