@@ -16,7 +16,7 @@ int main()
     cin >> num_students;
 
     if (num_students < 0)
-        cout << "There are no grading statistics then! ";
+        cout << "There are no grading statistics then!";
     else
     {
         for (int i = 1; i <= num_students; i++)
@@ -25,14 +25,13 @@ int main()
             cout << "Student #" << i << endl
                 << "Enter the student's score: ";
             cin >> score_student;
-            if (score_student > 5 || score_student < 0)
+
+            while (score_student > 5 || score_student < 0)
             {
-                while (score_student > 5 || score_student < 0)
-                {
-                cout << "Invalid grade. Enter again: ";
-                cin >> score_student;
-                }
+            cout << "Invalid grade. Enter again: ";
+            cin >> score_student;
             }
+
             switch(score_student)
             {
                 case 1:
@@ -53,9 +52,9 @@ int main()
         cout << "Failing grades: " << failing_grades << endl;
         
         if (passing_grades > failing_grades)
-            cout << "Your students performed well! ";
+            cout << "Your students performed well!";
         else
-            cout << "We need to improve quiz scores. ";
+            cout << "We need to improve quiz scores.";
     }
     return 0;
 }
