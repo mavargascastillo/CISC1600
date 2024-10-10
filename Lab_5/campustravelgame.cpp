@@ -4,12 +4,14 @@ using namespace std;
 int main()
 {
     int miles_from_campus = 14;
+    bool flag = true;
 
     cout << "You are " << miles_from_campus << "mile(s) from campus!" << endl;
 
-    for (int i = 1; i <= 4; i++)
+    
+    while (flag == true)
     {
-        while (miles_from_campus > 0)
+        for (int i = 1; i <= 4; i++)
         {
             int choice_of_transport;
             cout << "How do you wish to travel? (1 bus, 2 subway, 3 jetpack) " << endl;
@@ -35,9 +37,16 @@ int main()
                     distance_to_deduct = 10;
                     break;
             }
-
             miles_from_campus -= distance_to_deduct;
-            cout << "You are " << miles_from_campus << "mile(s) from campus!" << endl;
+
+            if (miles_from_campus < 0){
+                cout << "You have over-shot your target!" << endl;
+                cout << "You lose!";
+                flag == false;
+            }
+            else{
+                cout << "You are " << miles_from_campus << "mile(s) from campus!" << endl;
+            }
         }
     }
 
