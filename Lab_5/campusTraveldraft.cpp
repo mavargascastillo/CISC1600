@@ -43,7 +43,7 @@ int main() {
         cout << "You are " << distance << " mile(s) from campus.!" << endl;
 
         if (distance == 0){
-            cout << "You won!";
+            cout << "You have won!";
             return 0;
         }
         turn++; // Increment the turn count
@@ -53,7 +53,7 @@ int main() {
         cout << "You haven't reached your target!" << endl;
         cout << "You lose!" << endl;
     } else if (distance == 0) {
-        cout << "You won!";
+        cout << "You have won!";
     }
 
     return 0;
