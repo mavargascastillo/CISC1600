@@ -1,61 +1,64 @@
 #include <iostream>
-
 using namespace std;
 
-int main ()
-{
-  int transport = 0;
-  int miles = 14;
-  int i = 0;
+int main(){
 
-  for (i == 0; i < 4; i++)
+    int distance_from_campus = 14;
+
+    cout << "You are " << distance_from_campus << " mile(s) from campus!" << endl;
+
+    for (int i = 0 ; i < 4 ; i++)
     {
-      cout << "You are " << miles << " mile(s) from campus!" << endl;
-      cout << "How do you wish to travel? (1 bus, 2 subway, 3 jetpack) ";
-      cin >> transport;
-      switch (transport){
+        int travel_method;
+        bool valid_input = false;
+        cout << "How do you wish to travel? (1 bus, 2 subway, 3 jetpack) ";
 
-        case 1:
-          miles = miles - 2;
-          break;
+        // While loop to check for invalid input
+        while (!valid_input)
+        {
+            cin >> travel_method;
+            /* if string, character, ask for input again
+            if (!(cin >> travel_method)){
+                cout << "Invalid choice, try again! ";
+                break;
+                
+            } */
+            
+            switch (travel_method){
+                case 1:
+                    distance_from_campus -= 2;
+                    valid_input = true;
+                    break;
+                case 2:
+                    distance_from_campus -= 5;
+                    valid_input = true;
+                    break;
+                case 3:
+                    distance_from_campus -= 10;
+                    valid_input = true;
+                    break;
+                default:
+                    cout << "Invalid choice, try again! ";
+                    break;
+            }
+        }
 
-        case 2:
-          miles = miles - 5;
-          break;
+        // Check if user is past the distance and get out of the for loop
+        if (distance_from_campus < 0)
+            break;
 
-        case 3:
-          miles = miles - 10;
-          break;
-
-        default:
-          cout << "Invalid choice, try again!" << endl;
-          i--;
-
-      }
-      
-      if (miles < 0)
-	      break;
-      else if (miles == 0)
-	      break;
+        cout << "You are " << distance_from_campus << " mile(s) from campus!" << endl;
+    }
+    
+    if (distance_from_campus == 0) {
+        cout << "You have won!" << endl;
+    } else if (distance_from_campus < 0) {
+        cout << "You have over-shot your target!" << endl;
+        cout << "You lose!" << endl;
+    } else if (distance_from_campus > 0) {
+        cout << "You haven't reached your target!" << endl;
+        cout << "You lose!" << endl;
     }
 
-  if (miles == 0)
-    {
-      cout << "You are " << miles << " mile(s) from campus!" << endl;
-      cout << "You have won!" << endl;
-    }
-  else if (miles < 0)
-    {
-      cout << "You have over-shot your target!" << endl;
-      cout << "You lose!" << endl;
-    }
-  else if (miles > 0)
-    {
-      cout << "You are " << miles << " mile(s) from campus!" << endl;
-      cout << "You haven't reached your target!" << endl;
-      cout << "You lose!" << endl;
-    }
-
-
-  return 0;
+    return 0;
 }
